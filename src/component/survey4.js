@@ -21,11 +21,8 @@ export class Survey4 {
         };
 
         document.querySelector('#survey4-next-btn').onclick = () => {
-            console.log('button clicked');
 
             let survey4CheckedValue = document.querySelector('#survey4').value;
-
-            console.log('survey4CheckedValue = ', survey4CheckedValue);
 
             if(survey4CheckedValue === '') {
                 alert('답변을 선택하셔야합니다.');
@@ -36,8 +33,6 @@ export class Survey4 {
             let survey5area = document.querySelector('#survey5-area');
             survey4area.style.display = 'none';
             survey5area.style.display = 'block';
-
-            console.log('문항4 완료');
 
         }
     }

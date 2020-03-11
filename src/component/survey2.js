@@ -21,7 +21,6 @@ export class Survey2 {
         };
 
         document.querySelector('#survey2-next-btn').onclick = () => {
-            console.log('button clicked');
 
             let survey2Clicked = document.querySelector('[name="survey2"]:checked');
 
@@ -31,14 +30,10 @@ export class Survey2 {
             }
 
             let survey2ClickedValue = survey2Clicked.value;
-            console.log('survey2ClickedValue = ', survey2ClickedValue);
-
             let survey2area = document.querySelector('#survey2-area');
             let survey3area = document.querySelector('#survey3-area');
             survey2area.style.display = 'none';
             survey3area.style.display = 'block';
-
-            console.log('문항2 완료');
 
         };
     }

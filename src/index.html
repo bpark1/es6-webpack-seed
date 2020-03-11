@@ -5,155 +5,168 @@
 </head>
 <body>
 
-<div id="survey1-area" style="background-color: #EEE; margin: 20px; padding: 20px;">
-    <div>
-        문항1
+<div>
+
+    <div id="survey1-area" class="survey">
+        <div class="survey-inner-area">
+            <div>
+                1번 문제
+            </div>
+            <div>
+                <p>1 더하기 1은?</p>
+            </div>
+            <input type="text" id="survey1-input">
+        </div>
+        <div class="before-next-btn-area">
+            <button id="survey1-next-btn" class="survey-next-btn">다음</button>
+            <div style="clear: both;"></div>
+        </div>
     </div>
-    <div>
-        <p>문항1 답변 입력하십시오</p>
+
+    <div id="survey2-area" class="survey" style="display: none;">
+        <div class="survey-inner-area">
+            <div>
+                2번 문제
+            </div>
+            <div>
+                <p>9 곱하기 9는?</p>
+            </div>
+            <input id="survey2-1" type="radio" name="survey2" class="survey2" value="survey2-1"><label for="survey2-1">72</label>
+            <input id="survey2-2" type="radio" name="survey2" class="survey2" value="survey2-2"><label for="survey2-2">81</label>
+        </div>
+        <div class="before-next-btn-area">
+            <button id="survey2-before-btn">이전</button><button id="survey2-next-btn" class="survey-next-btn">다음</button>
+        </div>
     </div>
-    <input type="text" id="survey1-input">
-    <div>
-        <button id="survey1-next-btn">다음</button>
+
+    <div id="survey3-area" class="survey" style="display: none;">
+        <div class="survey-inner-area">
+            <div>
+                3번 문제
+            </div>
+            <div>
+                <p>1보다 작은 숫자는? (다중선택 할 수 있습니다)</p>
+            </div>
+            <div><input id="survey3-1" name="survey3" type="checkbox"><label for="survey3-1">-5</label></div>
+            <div><input id="survey3-2" name="survey3" type="checkbox"><label for="survey3-2">-2</label></div>
+            <div><input id="survey3-3" name="survey3" type="checkbox"><label for="survey3-3">0</label></div>
+            <div><input id="survey3-4" name="survey3" type="checkbox"><label for="survey3-4">1</label></div>
+            <div><input id="survey3-5" name="survey3" type="checkbox"><label for="survey3-5">2</label></div>
+        </div>
+
+        <div class="before-next-btn-area">
+            <button id="survey3-before-btn">이전</button><button id="survey3-next-btn" class="survey-next-btn">다음</button>
+        </div>
+    </div>
+
+    <div id="survey4-area" class="survey" style="display: none;">
+        <div class="survey-inner-area">
+            <div>
+                4번 문제
+            </div>
+            <div>
+                <p>2 곱하기 3은?</p>
+            </div>
+            <select id="survey4">
+                <option hidden value="">-</option>
+                <option value="survey4-1">1</option>
+                <option value="survey4-2">2</option>
+                <option value="survey4-3">6</option>
+                <option value="survey4-4">10</option>
+                <option value="survey4-5">12</option>
+            </select>
+        </div>
+        <div class="before-next-btn-area">
+            <button id="survey4-before-btn">이전</button><button id="survey4-next-btn" class="survey-next-btn">다음</button>
+        </div>
+    </div>
+
+    <div id="survey5-area" class="survey" style="display: none;">
+        <div class="survey-inner-area">
+            <div>
+                5번 문제
+            </div>
+            <div>
+                <p>문제풀이에 관한 개선사항을 알려주세요.</p>
+            </div>
+            <textarea id="survey5-textarea"></textarea>
+        </div>
+        <div class="before-next-btn-area">
+            <button id="survey5-before-btn">이전</button><button id="survey5-submit-btn" class="survey-next-btn">제출</button>
+        </div>
+    </div>
+
+    <div id="survey-answer-area" style="display: none">
+
+        <h1 class="survey-answer-title">문제풀이를 완료하셨습니다.</h1>
+
+        <div id="survey1-answer-area" class="survey-answer">
+            <div>
+                1번 문제
+            </div>
+            <div>
+                <p>1 더하기 1은?</p>
+            </div>
+            <p id="survey1-input-answer"></p>
+        </div>
+
+        <div id="survey2-answer-area" class="survey-answer">
+            <div>
+                2번 문제
+            </div>
+            <div>
+                <p>9 곱하기 9는?</p>
+            </div>
+            <input id="survey2-1-answer" type="radio" name="survey2" class="survey2-answer" value="survey2-1" disabled><label>72</label>
+            <input id="survey2-2-answer" type="radio" name="survey2" class="survey2-answer" value="survey2-2" disabled><label>81</label>
+
+        </div>
+
+        <div id="survey3-answer-area" class="survey-answer">
+            <div>
+                3번 문제
+            </div>
+            <div>
+                <p>1보다 작은 숫자는? (다중선택 할 수 있습니다)</p>
+            </div>
+            <div><input id="survey3-1-answer" name="survey3-answer" class="survey3-1" type="checkbox" disabled><label>-5</label></div>
+            <div><input id="survey3-2-answer" name="survey3-answer" class="survey3-2" type="checkbox" disabled><label>-2</label></div>
+            <div><input id="survey3-3-answer" name="survey3-answer" class="survey3-3" type="checkbox" disabled><label>0</label></div>
+            <div><input id="survey3-4-answer" name="survey3-answer" class="survey3-4" type="checkbox" disabled><label>1</label></div>
+            <div><input id="survey3-5-answer" name="survey3-answer" class="survey3-5" type="checkbox" disabled><label>2</label></div>
+
+        </div>
+
+        <div id="survey4-answer-area" class="survey-answer">
+            <div>
+                4번 문제
+            </div>
+            <div>
+                <p>2 곱하기 3은?</p>
+            </div>
+            <select id="survey4-answer" disabled>
+                <option hidden value="">-</option>
+                <option id="survey4-1-answer" value="survey4-1">1</option>
+                <option id="survey4-2-answer" value="survey4-2">2</option>
+                <option id="survey4-3-answer" value="survey4-3">6</option>
+                <option id="survey4-4-answer" value="survey4-4">10</option>
+                <option id="survey4-5-answer" value="survey4-5">12</option>
+            </select>
+
+        </div>
+
+        <div id="survey5-answer-area" class="survey-answer">
+            <div>
+                5번 문제
+            </div>
+            <div>
+                <p>문제풀이에 관한 개선사항을 알려주세요.</p>
+            </div>
+            <p id="survey5-textarea-answer"></p>
+
+        </div>
+
     </div>
 </div>
-
-<div id="survey2-area" style="background-color: #EEE; margin: 20px; padding: 20px; display: none;">
-    <div>
-        문항 2
-    </div>
-    <div>
-        <p>radio 둘중 하나 선택하십시오.</p>
-    </div>
-    <input id="survey2-1" type="radio" name="survey2" class="survey2" value="survey2-1"><label for="survey2-1">항목1</label>
-    <input id="survey2-2" type="radio" name="survey2" class="survey2" value="survey2-2"><label for="survey2-2">항목2</label>
-    <div>
-        <button id="survey2-before-btn">이전</button><button id="survey2-next-btn">다음</button>
-    </div>
-</div>
-
-<div id="survey3-area" style="background-color: #EEE; margin: 20px; padding: 20px; display: none;">
-    <div>
-        문항 3
-    </div>
-    <div>
-        <p>checkbox 다중선택 하십시오.</p>
-    </div>
-    <div><input id="survey3-1" name="survey3" type="checkbox"><label for="survey3-1">항목1</label></div>
-    <div><input id="survey3-2" name="survey3" type="checkbox"><label for="survey3-2">항목2</label></div>
-    <div><input id="survey3-3" name="survey3" type="checkbox"><label for="survey3-3">항목3</label></div>
-    <div><input id="survey3-4" name="survey3" type="checkbox"><label for="survey3-4">항목4</label></div>
-    <div><input id="survey3-5" name="survey3" type="checkbox"><label for="survey3-5">항목5</label></div>
-
-    <div>
-        <button id="survey3-before-btn">이전</button><button id="survey3-next-btn">다음</button>
-    </div>
-</div>
-
-<div id="survey4-area" style="background-color: #EEE; margin: 20px; padding: 20px; display: none;">
-    <div>
-        문항 4
-    </div>
-    <div>
-        <p>select box로 지정하십시오</p>
-    </div>
-    <select id="survey4">
-        <option hidden value="">-</option>
-        <option value="survey4-1">항목1</option>
-        <option value="survey4-2">항목2</option>
-        <option value="survey4-3">항목3</option>
-        <option value="survey4-4">항목4</option>
-        <option value="survey4-5">항목5</option>
-    </select>
-    <div>
-        <button id="survey4-before-btn">이전</button><button id="survey4-next-btn">다음</button>
-    </div>
-</div>
-
-<div id="survey5-area" style="background-color: #EEE; margin: 20px; padding: 20px; display: none;">
-    <div>
-        문항 5
-    </div>
-    <div>
-        <p>textarea 답변 입력하십시오</p>
-    </div>
-    <textarea id="survey5-textarea"></textarea>
-    <div>
-        <button id="survey5-before-btn">이전</button><button id="survey5-submit-btn">제출</button>
-    </div>
-</div>
-
-<div id="survey-answer-area" style="display: none">
-
-    <h1 style="text-align: center">설문을 완료하셨습니다.</h1>
-
-    <div id="survey1-answer-area" style="background-color: #EEE; margin: 20px; padding: 20px;">
-        <div>
-            문항1
-        </div>
-        <div>
-            <p>문항1 답변 입력하십시오</p>
-        </div>
-        <p id="survey1-input-answer" style="font-style: italic; font-weight: bold;">input value</p>
-    </div>
-
-    <div id="survey2-answer-area" style="background-color: #EEE; margin: 20px; padding: 20px;">
-        <div>
-            문항 2
-        </div>
-        <div>
-            <p>radio 둘중 하나 선택하십시오.</p>
-        </div>
-        <input id="survey2-1-answer" type="radio" name="survey2" class="survey2-answer" value="survey2-1" checked disabled><label>항목1</label>
-        <input id="survey2-2-answer" type="radio" name="survey2" class="survey2-answer" value="survey2-2" disabled><label>항목2</label>
-
-    </div>
-
-    <div id="survey3-answer-area" style="background-color: #EEE; margin: 20px; padding: 20px;">
-        <div>
-            문항 3
-        </div>
-        <div>
-            <p>checkbox 다중선택 하십시오.</p>
-        </div>
-        <div><input id="survey3-1-answer" name="survey3-answer" class="survey3-1" type="checkbox" disabled><label>항목1</label></div>
-        <div><input id="survey3-2-answer" name="survey3-answer" class="survey3-2" type="checkbox" disabled><label>항목2</label></div>
-        <div><input id="survey3-3-answer" name="survey3-answer" class="survey3-3" type="checkbox" disabled><label>항목3</label></div>
-        <div><input id="survey3-4-answer" name="survey3-answer" class="survey3-4" type="checkbox" disabled><label>항목4</label></div>
-        <div><input id="survey3-5-answer" name="survey3-answer" class="survey3-5" type="checkbox" disabled><label>항목5</label></div>
-
-    </div>
-
-    <div id="survey4-answer-area" style="background-color: #EEE; margin: 20px; padding: 20px;">
-        <div>
-            문항 4
-        </div>
-        <div>
-            <p>select box로 지정하십시오</p>
-        </div>
-        <select id="survey4-answer" disabled>
-            <option hidden value="">-</option>
-            <option id="survey4-1-answer" value="survey4-1">항목1</option>
-            <option id="survey4-2-answer" value="survey4-2">항목2</option>
-            <option id="survey4-3-answer" value="survey4-3">항목3</option>
-            <option id="survey4-4-answer" value="survey4-4">항목4</option>
-            <option id="survey4-5-answer" value="survey4-5">항목5</option>
-        </select>
-
-    </div>
-
-    <div id="survey5-answer-area" style="background-color: #EEE; margin: 20px; padding: 20px;">
-        <div>
-            문항 5
-        </div>
-        <div>
-            <p>textarea 답변 입력하십시오</p>
-        </div>
-        <p id="survey5-textarea-answer" style="font-style: italic; font-weight: bold;">input value</p>
-
-    </div>
-
-</div>
-
 </body>
 </html>

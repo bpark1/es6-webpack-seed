@@ -31,7 +31,6 @@ export class Survey5 {
             let survey2AnswerElements = document.querySelectorAll('.survey2-answer');
 
             survey2AnswerElements.forEach((survey2AnswerElement) => {
-                console.log(survey2AnswerElement.value);
 
                 if (survey2AnswerElement.value === survey2ClickedValue) {
                     survey2AnswerElement.checked = true;
@@ -45,8 +44,6 @@ export class Survey5 {
             survey3CheckedElements.forEach((survey3CheckedElement) => {
                 survey3CheckedValueArray.push(survey3CheckedElement.id);
             });
-
-            console.log('survey3CheckedValueArray = ', survey3CheckedValueArray);
 
             survey3AnswerElements.forEach((survey3AnswerElement) => {
 
@@ -78,18 +75,15 @@ export class Survey5 {
         };
 
         document.querySelector('#survey5-submit-btn').onclick = () => {
-            console.log('button clicked');
 
             let survey5Text = document.querySelector('#survey5-textarea').value;
-            console.log('survey5Text = ', survey5Text);
 
             if (survey5Text === '') {
-                alert('답변을 입력하셔야합니다.');
+                alert('개선사항을 입력하셔야합니다.');
                 return;
             }
 
-            if (confirm('설문을 완료하시겠습니까?')) {
-                console.log('문항5 완료');
+            if (confirm('제출하시겠습니까?')) {
                 surveySubmit();
                 showAnswerArea();
             }

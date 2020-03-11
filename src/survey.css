@@ -1,0 +1,59 @@
+.survey {
+    border: 1px solid #888;
+    background-color: #EEE;
+    margin: auto;
+    padding: 20px;
+    width: 400px;
+}
+
+.survey-inner-area {
+    height: 200px;
+}
+
+.before-next-btn-area {
+    margin: 20px 0 0 0;
+}
+
+.survey-next-btn {
+    float: right;
+}
+
+#survey1-input {
+    width: 100%;
+}
+
+#survey4 {
+    width: 200px;
+}
+
+#survey5-textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+.survey-answer {
+    border: 1px solid #888;
+    background-color: #EEE;
+    margin: 10px auto 10px auto;
+    padding: 20px;
+    width: 400px;
+}
+
+.survey-answer-title {
+    text-align: center;
+}
+
+#survey1-input-answer {
+    font-style: italic;
+    font-weight: bold;
+}
+
+#survey4-answer {
+    width: 200px;
+}
+
+#survey5-textarea-answer {
+    font-style: italic;
+    font-weight: bold;
+}

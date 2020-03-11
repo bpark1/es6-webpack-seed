@@ -21,7 +21,6 @@ export class Survey3 {
         };
 
         document.querySelector('#survey3-next-btn').onclick = () => {
-            console.log('button clicked');
 
             let survey3Checked = document.querySelectorAll('[name="survey3"]:checked');
 
@@ -34,8 +33,6 @@ export class Survey3 {
             let survey4area = document.querySelector('#survey4-area');
             survey3area.style.display = 'none';
             survey4area.style.display = 'block';
-
-            console.log('문항3 완료');
 
         }
     }

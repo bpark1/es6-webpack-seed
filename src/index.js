@@ -1,4 +1,5 @@
 import './style.css';
+import './survey.css';
 
 import { Survey1 } from './component/survey1';
 import { Survey2 } from './component/survey2';
@@ -13,5 +14,5 @@ const excute = () => {
     const survey4 = new Survey4();
     const survey5 = new Survey5();
 };
-console.log('es6');
+
 excute();
