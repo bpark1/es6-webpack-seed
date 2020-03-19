@@ -21,8 +21,8 @@ const execute = () => {
     // const survey5 = new Survey5();
 
     const surveyInputText = new SurveyInputText('1 더하기 1은?', []);
-    const surveyInputRadio = new SurveyInputRadio('1 더하기 1은??', []);
-    const surveyInputCheckbox = new SurveyInputCheckbox('1 더하기 1은???', []);
+    const surveyInputRadio = new SurveyInputRadio('1 더하기 1은??', [111, 222]);
+    const surveyInputCheckbox = new SurveyInputCheckbox('1 더하기 1은???', [-5, -2, 0, 1, 2]);
     const surveySelect = new SurveySelect('1 더하기 1은???', []);
     const surveyTextarea = new SurveyTextarea('1 더하기 1은???', []);
 };
@@ -35,39 +35,39 @@ let setVisibility = () => {
     //     prevButton.style.block = 'none';
     // }
 
-    console.log('let setVisibility');
+    // console.log('let setVisibility');
 
     const formElements = document.querySelectorAll('.form-element');
     const numberOfForms = formElements.length;
 
-    console.log('formElements = ', formElements);
-    console.log('numberOfForms = ', numberOfForms);
+    // console.log('formElements = ', formElements);
+    // console.log('numberOfForms = ', numberOfForms);
 
     let formNumberList = [];
     let maxFormNumber = -1;
 
     formElements.forEach((formElement) => {
         const dataStepNumber = formElement.getAttribute('data-step-number');
-        console.log('dataStepNumber = ', dataStepNumber);
+        // console.log('dataStepNumber = ', dataStepNumber);
         const stepNumber = parseInt(dataStepNumber);
         formNumberList.push(parseInt(stepNumber));
 
         if (stepNumber === 1) {
             const prevButton = formElement.querySelector('.prev-button');
 
-            console.log('stepNumber 1 prevButton = ', prevButton);
+            // console.log('stepNumber 1 prevButton = ', prevButton);
             prevButton.style.display = 'none';
 
         }
 
         if (stepNumber === formElements.length) {
-            console.log('if (stepNumber === formElements.length), formElement = ', formElement);
+            // console.log('if (stepNumber === formElements.length), formElement = ', formElement);
             const nextButton = formElement.querySelector('.next-button');
-            console.log('stepNumber 3 nextButton = ', nextButton);
+            // console.log('stepNumber 3 nextButton = ', nextButton);
             nextButton.style.display = 'none';
 
             const submitButton = formElement.querySelector('.submit-button');
-            console.log('stepNumber 3 submitButton = ', submitButton);
+            // console.log('stepNumber 3 submitButton = ', submitButton);
             submitButton.style.display = 'inline-block';
         } else {
             const submitButton = formElement.querySelector('.submit-button');
