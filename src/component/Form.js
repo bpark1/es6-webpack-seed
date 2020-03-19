@@ -1,28 +1,33 @@
 export class Form {
-    constructor(stepNumber, question, items) {
-        this.stepNumber = stepNumber;
+    constructor(question, items) {
+        // this.stepNumber = stepNumber;
         this.question = question;
         this.items = items;
 
         this.createForm();
 
-        this.updateButtons();
-        this.init();
+        // this.updateButtons();
+        // this.init();
     }
 
     createForm() {
         const formElement = document.createElement('div');
         // formElement.setAttribute('id', `step${this.stepNumber}`);
-        formElement.id = `step${this.stepNumber}`;
+
         formElement.classList.add('form-element');
-        formElement.setAttribute('data-step-number', this.stepNumber);
+        formElement.classList.add('survey');
+        const formElements = document.querySelectorAll('.form-element');
+        const numberOfForms = formElements.length;
+        const dataStepNumber = numberOfForms + 1;
+        formElement.id = `step${dataStepNumber}`;
+        formElement.setAttribute('data-step-number', dataStepNumber);
 
         const titleElement = document.createElement('div');
         titleElement.classList.add('title');
         const titleTextElement = document.createElement('p');
         // const titleText = `문제 ${this.stepNumber}`;
         // titleTextElement.innerText = titleText;
-        titleTextElement.innerText = `문제 ${this.stepNumber}`;
+        titleTextElement.innerText = `문제 ${dataStepNumber}`;
 
         const questionElement = document.createElement('div');
         questionElement.classList.add('question');
@@ -43,17 +48,24 @@ export class Form {
         //     prevButton.style.block = 'none';
         // }
         const nextButton = document.createElement(('button'));
-        prevButton.classList.add('next-button');
+        nextButton.classList.add('next-button');
         nextButton.innerText = '다음';
         const submitButton = document.createElement(('button'));
-        submitButton.classList.add('next-button');
+        submitButton.classList.add('submit-button');
         submitButton.innerText = '제출';
-        submitButton.style.display = 'none';
+        // submitButton.style.display = 'none';
+
+        answerInputAreaElement.appendChild(prevButton);
+        answerInputAreaElement.appendChild(nextButton);
+        answerInputAreaElement.appendChild(submitButton);
 
         formElement.appendChild(titleElement);
         formElement.appendChild(questionElement);
         formElement.appendChild(answerInputAreaElement);
         formElement.appendChild(buttonsAreaElement);
+
+        const resultElement = document.querySelector('#result');
+        resultElement.appendChild(formElement);
 
 
 
@@ -65,9 +77,9 @@ export class Form {
 
     }
 
-    init() {
-        this.setListener();
-    }
+    // init() {
+    //     this.setListener();
+    // }
 
     setListener() {
 
