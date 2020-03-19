@@ -31,6 +31,7 @@ export class Form {
         // const titleText = `문제 ${this.stepNumber}`;
         // titleTextElement.innerText = titleText;
         titleTextElement.innerText = `문제 ${dataStepNumber}`;
+        titleElement.appendChild(titleTextElement);
 
         const questionElement = document.createElement('div');
         questionElement.classList.add('question');

@@ -12,6 +12,20 @@ export class SurveyTextarea extends Form {
         //
         // // this.updateButtons();
         // // this.init();
+
+        this.appendAnswerArea();
+    }
+
+    appendAnswerArea () {
+
+        const formElement = this.formElement;
+        const answerInputArea = formElement.querySelector('.answer-input-area');
+
+        const textareaElement = document.createElement('textarea');
+        textareaElement.classList.add('survey5-textarea');
+
+        answerInputArea.appendChild(textareaElement);
+
     }
 
 }
