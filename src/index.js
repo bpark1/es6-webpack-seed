@@ -25,6 +25,7 @@ const execute = () => {
     const surveyInputCheckbox = new SurveyInputCheckbox('1 더하기 1은???', [-5, -2, 0, 1, 2]);
     const surveySelect = new SurveySelect('1 더하기 1은???', [1, 2, 3, 4, 5]);
     const surveyTextarea = new SurveyTextarea('1 더하기 1은???', []);
+    const surveyTextarea1 = new SurveyTextarea('1 더하기 1은???', []);
 };
 
 execute();

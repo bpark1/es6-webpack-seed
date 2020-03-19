@@ -42,22 +42,27 @@ export class SurveyTextarea extends Form {
 
         const formElement = this.formElement;
 
+        const nextButton = formElement.querySelector('.next-button');
         const submitButton = formElement.querySelector('.submit-button');
 
-        submitButton.onclick = () => {
-
-            const inputTextValidationResult = this.inputValidation(formElement);
-
-            if (!inputTextValidationResult) {
-                alert('답변을 입력하셔야합니다.');
-                return;
+        if (nextButton.style.display === '' || nextButton.style.display === 'inline-block') {
+            nextButton.onclick = () => {
+                const inputTextValidationResult = this.inputValidation(formElement);
+                if (!inputTextValidationResult) {
+                    alert('답변을 입력하셔야합니다.');
+                    return;
+                }
             }
+        }
 
-            // let survey1area = document.querySelector('#survey1-area');
-            // let survey2area = document.querySelector('#survey2-area');
-            // survey1area.style.display = 'none';
-            // survey2area.style.display = 'block';
-
+        if (submitButton.style.display === '' || submitButton.style.display === 'inline-block') {
+            submitButton.onclick = () => {
+                const inputTextValidationResult = this.inputValidation(formElement);
+                if (!inputTextValidationResult) {
+                    alert('답변을 입력하셔야합니다.');
+                    return;
+                }
+            }
         }
     }
 

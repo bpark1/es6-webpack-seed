@@ -61,11 +61,7 @@ export class SurveySelect extends Form {
     inputValidation(formElement) {
         let selectValue = formElement.querySelector('select').value;
 
-        if(selectValue === '') {
-            return false;
-        } else {
-            return true;
-        }
+        return selectValue !== '';
 
     }
 
