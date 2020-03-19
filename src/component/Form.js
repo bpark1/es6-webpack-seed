@@ -5,7 +5,7 @@ export class Form {
         this.items = items;
 
         this.createForm();
-        this.setVisibility();
+
         this.updateButtons();
         this.init();
     }
@@ -59,42 +59,7 @@ export class Form {
 
     }
 
-    setVisibility() {
-        // if (this.stepNumber === 1) {
-        //     const prevButton = document.querySelector('.prev-button');
-        //     prevButton.style.block = 'none';
-        // }
 
-        const formElements = document.querySelectorAll('.form-element');
-        const numberOfForms = formElements.length;
-
-        let formNumberList = [];
-        let maxFormNumber = -1;
-
-        formElements.forEach((formElement) => {
-            const dataStepNumber = formElement.getAttribute('data-step-number');
-            const stepNumber = parseInt(dataStepNumber);
-            formNumberList.push(parseInt(stepNumber));
-
-            if (stepNumber === 1) {
-                const prevButton = formElement.querySelector('.prev-button');
-                prevButton.style.block = 'none';
-            }
-
-            if (stepNumber === formElements.length) {
-                const nextButton = formElement.querySelector('.next-button');
-                nextButton.style.block = 'none';
-
-                const submitButton = formElement.querySelector('.submit-button');
-                submitButton.style.block = 'inline-block';
-            }
-
-            if (stepNumber > maxFormNumber) {
-                maxFormNumber = stepNumber;
-            }
-        });
-
-    }
 
     updateButtons() {
 
