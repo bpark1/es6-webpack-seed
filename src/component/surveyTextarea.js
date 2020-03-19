@@ -29,19 +29,26 @@ export class SurveyTextarea extends Form {
 
     }
 
+    inputValidation(formElement) {
+        const textareaElement = formElement.querySelector('textarea');
+
+        let textareaValue = textareaElement.value;
+
+        return textareaValue !== '';
+
+    }
+
     setListener() {
 
         const formElement = this.formElement;
 
         const submitButton = formElement.querySelector('.submit-button');
-        const textareaElement = formElement.querySelector('textarea');
-
 
         submitButton.onclick = () => {
 
-            let textareaValue = textareaElement.value;
+            const inputTextValidationResult = this.inputValidation(formElement);
 
-            if (textareaValue === '') {
+            if (!inputTextValidationResult) {
                 alert('답변을 입력하셔야합니다.');
                 return;
             }

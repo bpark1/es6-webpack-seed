@@ -44,6 +44,14 @@ export class SurveyInputRadio extends Form {
 
     }
 
+    inputValidation(formElement) {
+        const radioName = formElement.id;
+        const inputRadioElements = formElement.querySelectorAll(`[name="${radioName}"]:checked`);
+
+        return inputRadioElements.length !== 0;
+
+    }
+
     setListener() {
 
         const formElement = this.formElement;
@@ -52,12 +60,9 @@ export class SurveyInputRadio extends Form {
 
         nextButton.onclick = () => {
 
-            const radioName = formElement.id;
-            const inputRadioElements = formElement.querySelectorAll(`[name="${radioName}"]:checked`);
+            const inputTextValidationResult = this.inputValidation(formElement);
 
-            console.log('inputRadioElements = ', inputRadioElements);
-
-            if (inputRadioElements.length === 0) {
+            if (!inputTextValidationResult) {
                 alert('답변을 선택하셔야합니다.');
                 return;
             }

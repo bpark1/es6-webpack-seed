@@ -51,6 +51,16 @@ export class SurveyInputCheckbox extends Form {
 
     }
 
+    inputValidation(formElement) {
+        const checkboxName = formElement.id;
+        const inputCheckboxElements = formElement.querySelectorAll(`[name="${checkboxName}"]:checked`);
+
+        console.log('inputRadioElements = ', inputCheckboxElements);
+
+        return inputCheckboxElements.length !== 0;
+
+    }
+
     setListener() {
 
         const formElement = this.formElement;
@@ -59,12 +69,9 @@ export class SurveyInputCheckbox extends Form {
 
         nextButton.onclick = () => {
 
-            const checkboxName = formElement.id;
-            const inputCheckboxElements = formElement.querySelectorAll(`[name="${checkboxName}"]:checked`);
+            const inputTextValidationResult = this.inputValidation(formElement);
 
-            console.log('inputRadioElements = ', inputCheckboxElements);
-
-            if (inputCheckboxElements.length === 0) {
+            if (!inputTextValidationResult) {
                 alert('답변을 하나 이상 선택하셔야합니다.');
                 return;
             }

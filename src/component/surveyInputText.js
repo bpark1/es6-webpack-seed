@@ -34,19 +34,23 @@ export class SurveyInputText extends Form {
 
     }
 
+    inputValidation(formElement) {
+        const inputText = formElement.querySelector('input').value;
+        return inputText !== '';
+
+    }
+
     setListener() {
 
         const formElement = this.formElement;
 
         const nextButton = formElement.querySelector('.next-button');
-        const inputText = formElement.querySelector('input');
-
 
         nextButton.onclick = () => {
 
-            let survey1Text = inputText.value;
+            const inputTextValidationResult = this.inputValidation(formElement);
 
-            if (survey1Text === '') {
+            if (!inputTextValidationResult) {
                 alert('답변을 입력하셔야합니다.');
                 return;
             }

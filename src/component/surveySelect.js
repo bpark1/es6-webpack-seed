@@ -58,6 +58,17 @@ export class SurveySelect extends Form {
 
     }
 
+    inputValidation(formElement) {
+        let selectValue = formElement.querySelector('select').value;
+
+        if(selectValue === '') {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
     setListener() {
 
         const formElement = this.formElement;
@@ -68,9 +79,9 @@ export class SurveySelect extends Form {
 
         nextButton.onclick = () => {
 
-            let selectValue = document.querySelector('select').value;
+            const inputTextValidationResult = this.inputValidation(formElement);
 
-            if(selectValue === '') {
+            if(!inputTextValidationResult) {
                 alert('답변을 선택하셔야합니다.');
                 return;
             }
