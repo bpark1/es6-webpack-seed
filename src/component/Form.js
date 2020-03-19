@@ -12,6 +12,9 @@ export class Form {
 
     createForm() {
         const formElement = document.createElement('div');
+
+        this.formElement = formElement;
+
         // formElement.setAttribute('id', `step${this.stepNumber}`);
 
         formElement.classList.add('form-element');
@@ -39,8 +42,11 @@ export class Form {
 
         const answerInputAreaElement = document.createElement('div');
 
+        answerInputAreaElement.classList.add('answer-input-area');
+
 
         const buttonsAreaElement = document.createElement('div');
+        buttonsAreaElement.classList.add('button-area');
         const prevButton = document.createElement(('button'));
         prevButton.classList.add('prev-button');
         prevButton.innerText = '이전';
@@ -55,9 +61,9 @@ export class Form {
         submitButton.innerText = '제출';
         // submitButton.style.display = 'none';
 
-        answerInputAreaElement.appendChild(prevButton);
-        answerInputAreaElement.appendChild(nextButton);
-        answerInputAreaElement.appendChild(submitButton);
+        buttonsAreaElement.appendChild(prevButton);
+        buttonsAreaElement.appendChild(nextButton);
+        buttonsAreaElement.appendChild(submitButton);
 
         formElement.appendChild(titleElement);
         formElement.appendChild(questionElement);
