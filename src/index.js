@@ -23,7 +23,7 @@ const execute = () => {
     const surveyInputText = new SurveyInputText('1 더하기 1은?', []);
     const surveyInputRadio = new SurveyInputRadio('1 더하기 1은??', [111, 222]);
     const surveyInputCheckbox = new SurveyInputCheckbox('1 더하기 1은???', [-5, -2, 0, 1, 2]);
-    const surveySelect = new SurveySelect('1 더하기 1은???', []);
+    const surveySelect = new SurveySelect('1 더하기 1은???', [1, 2, 3, 4, 5]);
     const surveyTextarea = new SurveyTextarea('1 더하기 1은???', []);
 };
 

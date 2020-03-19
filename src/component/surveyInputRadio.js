@@ -20,7 +20,7 @@ export class SurveyInputRadio extends Form {
 
         const items = this.items;
 
-        console.log('items = ', items);
+        // console.log('items = ', items);
 
         const formElement = this.formElement;
         const answerInputArea = formElement.querySelector('.answer-input-area');
