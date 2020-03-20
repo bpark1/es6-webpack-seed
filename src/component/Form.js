@@ -106,6 +106,33 @@ export class Form {
         }
     }
 
+    showSurveyResult() {
+        const formElements = document.querySelectorAll('.form-element');
+        const numberOfForms = formElements.length;
+
+        formElements.forEach((formElement, index) => {
+            const formStepNumber = index + 1;
+
+            formElement.style.display = 'block';
+            formElement.querySelector('.button-area').style.display = 'none';
+            formElement.querySelectorAll('input').forEach((inputElement) => {
+                inputElement.disabled = true;
+            });
+
+            formElement.querySelectorAll('select').forEach((selectElement) => {
+                selectElement.disabled = true;
+            });
+
+            formElement.querySelectorAll('textarea').forEach((textareaElement) => {
+                textareaElement.disabled = true;
+            });
+
+
+
+
+        });
+    }
+
     setSubmitButtonListener() {
         const formElement = this.formElement;
         const submitButton = formElement.querySelector('.submit-button');
@@ -118,6 +145,9 @@ export class Form {
                 return;
             } else {
                 console.log('submitButton clicked');
+                if (confirm('제출하시겠습니까?')) {
+                    this.showSurveyResult();
+                }
             }
         }
     }
