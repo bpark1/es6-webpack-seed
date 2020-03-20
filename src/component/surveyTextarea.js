@@ -2,8 +2,8 @@ import { Form } from './Form'
 
 export class SurveyTextarea extends Form {
 
-    constructor(question, items) {
-        super(question, items);
+    constructor(question, items, validationFailMessage) {
+        super(question, items, validationFailMessage);
         // this.stepNumber = stepNumber;
         // this.question = question;
         // this.items = items;
@@ -49,7 +49,7 @@ export class SurveyTextarea extends Form {
             nextButton.onclick = () => {
                 const inputTextValidationResult = this.inputValidation(formElement);
                 if (!inputTextValidationResult) {
-                    alert('답변을 입력하셔야합니다.');
+                    alert(this.validationFailMessage);
                     return;
                 }
             }
@@ -59,7 +59,7 @@ export class SurveyTextarea extends Form {
             submitButton.onclick = () => {
                 const inputTextValidationResult = this.inputValidation(formElement);
                 if (!inputTextValidationResult) {
-                    alert('답변을 입력하셔야합니다.');
+                    alert(this.validationFailMessage);
                     return;
                 }
             }

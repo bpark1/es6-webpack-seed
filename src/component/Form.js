@@ -1,8 +1,9 @@
 export class Form {
-    constructor(question, items) {
+    constructor(question, items, validationFailMessage) {
         // this.stepNumber = stepNumber;
         this.question = question;
         this.items = items;
+        this.validationFailMessage = validationFailMessage;
 
         this.createForm();
 
