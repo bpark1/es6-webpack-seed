@@ -9,8 +9,6 @@ export class SurveyInputCheckbox extends Form {
 
     appendAnswerArea () {
         const items = this.items;
-        // console.log('items = ', items);
-
         const formElement = this.formElement;
         const answerInputArea = formElement.querySelector('.answer-input-area');
 
@@ -36,9 +34,7 @@ export class SurveyInputCheckbox extends Form {
     inputValidation(formElement) {
         const checkboxName = formElement.id;
         const inputCheckboxElements = formElement.querySelectorAll(`[name="${checkboxName}"]:checked`);
-
         return inputCheckboxElements.length !== 0;
-
     }
 
 }

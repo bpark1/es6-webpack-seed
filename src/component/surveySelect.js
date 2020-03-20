@@ -9,12 +9,10 @@ export class SurveySelect extends Form {
 
     appendAnswerArea () {
         const items = this.items;
-        // console.log('items = ', items);
 
         const formElement = this.formElement;
         const answerInputArea = formElement.querySelector('.answer-input-area');
         const selectElement = document.createElement('select');
-
         const defaultSelectOption = document.createElement('option');
         defaultSelectOption.hidden = true;
         defaultSelectOption.innerText = '답을 선택하시오';

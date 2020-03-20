@@ -1,12 +1,6 @@
 import './style.css';
 import './survey.css';
 
-// import { Survey1 } from './component/survey1';
-// import { Survey2 } from './component/survey2';
-// import { Survey3 } from './component/survey3';
-// import { Survey4 } from './component/survey4';
-// import { Survey5 } from './component/survey5';
-
 import { SurveyInputText } from './component/surveyInputText';
 import { SurveyInputRadio } from './component/surveyInputRadio';
 import { SurveyInputCheckbox } from './component/surveyInputCheckbox';
@@ -14,11 +8,6 @@ import { SurveySelect } from './component/surveySelect';
 import { SurveyTextarea } from './component/surveyTextarea';
 
 const execute = () => {
-    // const survey1 = new Survey1();
-    // const survey2 = new Survey2();
-    // const survey3 = new Survey3();
-    // const survey4 = new Survey4();
-    // const survey5 = new Survey5();
 
     const surveyInputText = new SurveyInputText('1 더하기 1은?', [], '답변을 입력하셔야합니다.');
     const surveyInputRadio = new SurveyInputRadio('1 더하기 1은??', [111, 222], '답변을 선택하셔야합니다.');

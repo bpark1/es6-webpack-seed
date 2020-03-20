@@ -10,7 +10,6 @@ export class SurveyInputText extends Form {
     appendAnswerArea () {
         const formElement = this.formElement;
         const answerInputArea = formElement.querySelector('.answer-input-area');
-
         const inputText = document.createElement('input');
         inputText.setAttribute('type', 'text');
 

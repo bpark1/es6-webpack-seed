@@ -12,9 +12,7 @@ export class SurveyTextarea extends Form {
         const answerInputArea = formElement.querySelector('.answer-input-area');
         const textareaElement = document.createElement('textarea');
         textareaElement.classList.add('survey5-textarea');
-
         answerInputArea.appendChild(textareaElement);
-
     }
 
     inputValidation(formElement) {
