@@ -6,9 +6,7 @@ export class Form {
         this.validationFailMessage = validationFailMessage;
 
         this.createForm();
-
-        // this.updateButtons();
-        // this.init();
+        this.setButtons();
     }
 
     createForm() {
@@ -89,22 +87,148 @@ export class Form {
     //     this.setListener();
     // }
 
-    setListener() {
 
-        document.querySelector('#survey1-next-btn').onclick = () => {
+    setPrevButtonListener() {
 
-            let survey1Text = document.querySelector('#survey1-input').value;
+        const formElement = this.formElement;
+        const prevButton = formElement.querySelector('.prev-button');
 
-            if (survey1Text === '') {
-                alert('답변을 입력하셔야합니다.');
-                return;
-            }
+        prevButton.onclick = () => {
 
-            let survey1area = document.querySelector('#survey1-area');
-            let survey2area = document.querySelector('#survey2-area');
-            survey1area.style.display = 'none';
-            survey2area.style.display = 'block';
+            alert('prevButton clicked');
+
+            // const inputTextValidationResult = this.inputValidation(formElement);
+            //
+            // if (!inputTextValidationResult) {
+            //     alert(this.validationFailMessage);
+            //     return;
+            // }
+
+            // let survey1area = document.querySelector('#survey1-area');
+            // let survey2area = document.querySelector('#survey2-area');
+            // survey1area.style.display = 'none';
+            // survey2area.style.display = 'block';
 
         }
     }
+
+    setNextButtonListener() {
+
+        const formElement = this.formElement;
+        const nextButton = formElement.querySelector('.next-button');
+
+        nextButton.onclick = () => {
+
+            const inputTextValidationResult = this.inputValidation(formElement);
+
+            if (!inputTextValidationResult) {
+                alert(this.validationFailMessage);
+                return;
+            } else {
+                console.log('nextButton clicked');
+            }
+
+            // let survey1area = document.querySelector('#survey1-area');
+            // let survey2area = document.querySelector('#survey2-area');
+            // survey1area.style.display = 'none';
+            // survey2area.style.display = 'block';
+
+        }
+    }
+
+    setSubmitButtonListener() {
+
+        const formElement = this.formElement;
+        const submitButton = formElement.querySelector('.submit-button');
+
+        submitButton.onclick = () => {
+            const inputTextValidationResult = this.inputValidation(formElement);
+
+            if (!inputTextValidationResult) {
+                alert(this.validationFailMessage);
+                return;
+            } else {
+                console.log('submitButton clicked');
+            }
+        }
+    }
+
+    enablePrevButton(formElement, enableButton) {
+        // const formElement = this.formElement;
+        const prevButton = formElement.querySelector('.prev-button');
+
+        if (enableButton) {
+            prevButton.style.display = 'inline-block';
+            this.setPrevButtonListener();
+        } else {
+            prevButton.style.display = 'none';
+        }
+    }
+
+    enableNextButton(formElement, enableButton) {
+        // const formElement = this.formElement;
+        const nextButton = formElement.querySelector('.next-button');
+
+        if (enableButton) {
+            nextButton.style.display = 'inline-block';
+            this.setNextButtonListener();
+        } else {
+            nextButton.style.display = 'none';
+        }
+    }
+
+    enableSubmitButton(formElement, enableButton) {
+        // const formElement = this.formElement;
+        const submitButton = formElement.querySelector('.submit-button');
+
+        if (enableButton) {
+            submitButton.style.display = 'inline-block';
+            this.setSubmitButtonListener();
+        } else {
+            submitButton.style.display = 'none';
+        }
+    }
+
+    setButtons() {
+        const formElements = document.querySelectorAll('.form-element');
+        const numberOfForms = formElements.length;
+
+        // const formElement = this.formElement;
+        // const formStepNumber = parseInt(formElement.getAttribute('data-step-number'));
+
+        formElements.forEach((formElement, index) => {
+            // const formStepNumber = parseInt(formElement.getAttribute('data-step-number'));
+            const formStepNumber = index + 1;
+
+            if (formStepNumber === 1) {
+                this.enablePrevButton(formElement, false);
+                this.enableNextButton(formElement, true);
+                this.enableSubmitButton(formElement, false);
+            } else if (formStepNumber === numberOfForms) {
+                this.enablePrevButton(formElement, true);
+                this.enableNextButton(formElement, false);
+                this.enableSubmitButton(formElement, true);
+            } else {
+                this.enablePrevButton(formElement, true);
+                this.enableNextButton(formElement, true);
+                this.enableSubmitButton(formElement, false);
+            }
+        });
+
+        // if (formStepNumber === 1) {
+        //     this.enablePrevButton(false);
+        //     this.enableNextButton(true);
+        //     this.enableSubmitButton(false);
+        // } else if (formStepNumber === numberOfForms) {
+        //     this.enablePrevButton(true);
+        //     this.enableNextButton(false);
+        //     this.enableSubmitButton(true);
+        // } else {
+        //     this.enablePrevButton(true);
+        //     this.enableNextButton(true);
+        //     this.enableSubmitButton(false);
+        // }
+
+    }
+
 }

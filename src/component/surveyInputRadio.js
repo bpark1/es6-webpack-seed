@@ -14,7 +14,7 @@ export class SurveyInputRadio extends Form {
         // // this.init();
 
         this.appendAnswerArea();
-        this.setListener();
+        // this.setListener();
     }
 
     appendAnswerArea () {
