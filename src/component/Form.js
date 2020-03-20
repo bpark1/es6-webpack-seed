@@ -56,9 +56,14 @@ export class Form {
         buttonsAreaElement.appendChild(nextButton);
         buttonsAreaElement.appendChild(submitButton);
 
-        formElement.appendChild(titleElement);
-        formElement.appendChild(questionElement);
-        formElement.appendChild(answerInputAreaElement);
+        const formInnerAreaElement = document.createElement('div');
+        formInnerAreaElement.classList.add('survey-inner-area');
+
+        formInnerAreaElement.appendChild(titleElement);
+        formInnerAreaElement.appendChild(questionElement);
+        formInnerAreaElement.appendChild(answerInputAreaElement);
+
+        formElement.appendChild(formInnerAreaElement);
         formElement.appendChild(buttonsAreaElement);
 
         const resultElement = document.querySelector('#result');
@@ -108,10 +113,8 @@ export class Form {
 
     showSurveyResult() {
         const formElements = document.querySelectorAll('.form-element');
-        const numberOfForms = formElements.length;
 
         formElements.forEach((formElement, index) => {
-            const formStepNumber = index + 1;
 
             formElement.style.display = 'block';
             formElement.querySelector('.button-area').style.display = 'none';
@@ -127,9 +130,6 @@ export class Form {
                 textareaElement.disabled = true;
             });
 
-
-
-
         });
     }
 
@@ -144,7 +144,6 @@ export class Form {
                 alert(this.validationFailMessage);
                 return;
             } else {
-                console.log('submitButton clicked');
                 if (confirm('제출하시겠습니까?')) {
                     this.showSurveyResult();
                 }
