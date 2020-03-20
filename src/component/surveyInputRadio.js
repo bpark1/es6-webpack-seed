@@ -4,23 +4,11 @@ export class SurveyInputRadio extends Form {
 
     constructor(question, items, validationFailMessage) {
         super(question, items, validationFailMessage);
-        // this.stepNumber = stepNumber;
-        // this.question = question;
-        // this.items = items;
-        //
-        // this.createForm();
-        //
-        // // this.updateButtons();
-        // // this.init();
-
         this.appendAnswerArea();
-        // this.setListener();
     }
 
     appendAnswerArea () {
-
         const items = this.items;
-
         // console.log('items = ', items);
 
         const formElement = this.formElement;
@@ -28,15 +16,11 @@ export class SurveyInputRadio extends Form {
 
         items.forEach((item, index) => {
             const inputRadio = document.createElement('input');
-            // inputRadio.setAttribute('type', 'radio');
-
             inputRadio.id = formElement.id + '-' + index;
             inputRadio.type = 'radio';
             inputRadio.name = formElement.id;
             const labelElement = document.createElement('label');
             labelElement.innerText = item;
-
-
 
             answerInputArea.appendChild(inputRadio);
             answerInputArea.appendChild(labelElement);
@@ -50,29 +34,6 @@ export class SurveyInputRadio extends Form {
 
         return inputRadioElements.length !== 0;
 
-    }
-
-    setListener() {
-
-        const formElement = this.formElement;
-
-        const nextButton = formElement.querySelector('.next-button');
-
-        nextButton.onclick = () => {
-
-            const inputTextValidationResult = this.inputValidation(formElement);
-
-            if (!inputTextValidationResult) {
-                alert(this.validationFailMessage);
-                return;
-            }
-
-            // let survey1area = document.querySelector('#survey1-area');
-            // let survey2area = document.querySelector('#survey2-area');
-            // survey1area.style.display = 'none';
-            // survey2area.style.display = 'block';
-
-        }
     }
 
 }

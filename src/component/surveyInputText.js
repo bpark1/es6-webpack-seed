@@ -4,26 +4,10 @@ export class SurveyInputText extends Form {
 
     constructor(question, items, validationFailMessage) {
         super(question, items, validationFailMessage);
-        // this.stepNumber = stepNumber;
-        // this.question = question;
-        // this.items = items;
-        //
-        // this.createForm();
-        //
-        // // this.updateButtons();
-        // // this.init();
-
         this.appendAnswerArea();
-        // this.setListener();
-
-    }
-
-    create() {
-
     }
 
     appendAnswerArea () {
-
         const formElement = this.formElement;
         const answerInputArea = formElement.querySelector('.answer-input-area');
 
@@ -37,41 +21,6 @@ export class SurveyInputText extends Form {
     inputValidation(formElement) {
         const inputText = formElement.querySelector('input').value;
         return inputText !== '';
-
-    }
-
-    setListener() {
-
-        const formElement = this.formElement;
-
-        const nextButton = formElement.querySelector('.next-button');
-        const submitButton = formElement.querySelector('.submit-button');
-
-        if (nextButton.style.display === '' || nextButton.style.display === 'inline-block') {
-
-            nextButton.onclick = () => {
-                const inputTextValidationResult = this.inputValidation(formElement);
-
-                if (!inputTextValidationResult) {
-                    alert(this.validationFailMessage);
-                    return;
-                }
-            }
-        }
-
-        if (submitButton.style.display === '' || submitButton.style.display === 'inline-block') {
-
-            submitButton.onclick = () => {
-                const inputTextValidationResult = this.inputValidation(formElement);
-
-                if (!inputTextValidationResult) {
-                    alert(this.validationFailMessage);
-                    return;
-                }
-            }
-        }
-
-
     }
 
 }
